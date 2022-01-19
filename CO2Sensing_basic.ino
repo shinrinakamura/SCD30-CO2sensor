@@ -94,9 +94,9 @@ void setup(void) {
   M5.Lcd.drawString("CO2 sensor system", 40, 5, 4);
 }
 
+
 int n = 0;
 void loop() {
-
   //センサーの測定
   if (scd30.dataReady()){   //データが準備できたら計測
     data_num += 1;
@@ -140,7 +140,7 @@ void loop() {
     //Serial.println("No data");
   }
   
-  //30秒ごとに平均値を作成して表示（送信）する
+  //30秒ごとに平均値を作成して送信（シリアルで表示）する
   if(timeCounter1 >= 30){
     timeCounter1 = 0;
     //平均値を計算
